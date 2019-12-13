@@ -4,16 +4,16 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      // ❓ // filename: './dev.sqlite3',
+      filename: '.data/recipe.db3',
     },
     useNullAsDefault: true,
     seeds: {
       directory: './data/seeds',
     },
   },
-  // ❓  // migrations: {
-  // //   directory: "./migrations/(insert file here)"
-  // // }
+  migrations: {
+    directory: './migrations/20191212143042_recipe-schema.js',
+  },
 
   pool: {
     afterCreate: (conn, done) => {
